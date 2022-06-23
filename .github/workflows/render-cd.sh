@@ -71,7 +71,7 @@ do
     fi
 
     #docker run --rm -i --net=host -v $(pwd)/decapod-base-yaml:/decapod-base-yaml -v $(pwd)/$outputdir:/out --name generate ${DOCKER_IMAGE_REPO}/sktcloud/helmrelease2yaml:v1.5.0 -m $hr_file -t -o /out/$site/$app
-    docker run --rm -i --net=host -v $(pwd)/decapod-base-yaml:/decapod-base-yaml -v $(pwd)/$outputdir:/out --name generate ${DOCKER_IMAGE_REPO}/sktcloud/decapod-render:v2.0.0 helm2yaml -m $hr_file -t -o /out/$site/$app    
+    docker run --rm -i --net=host -v $(pwd)/decapod-base-yaml:/decapod-base-yaml -v $(pwd)/$outputdir:/out --name generate ${DOCKER_IMAGE_REPO}/sktcloud/decapod-render:v2.0.0 helm2yaml -m ../$hr_file -t -o /out/$site/$app    
     rm $hr_file
 
   done
