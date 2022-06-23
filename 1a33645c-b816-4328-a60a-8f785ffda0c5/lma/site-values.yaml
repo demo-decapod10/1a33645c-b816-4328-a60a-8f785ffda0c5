@@ -169,7 +169,6 @@ charts:
     queryFrontend.service.http.nodePort: 30007
     querier.stores:
     - prometheus-operated.lma.svc.$(clusterName):10901
-    - ad1605024e19c4c7f8d628c3f1e4208f-1819693364.ap-northeast-2.elb.amazonaws.com:10901
     bucketweb.enabled: $(thanosPrimaryCluster)
     bucketweb.nodeSelector: $(nodeSelector)
     compactor.enabled: $(thanosPrimaryCluster)
