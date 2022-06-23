@@ -56,7 +56,7 @@ do
 
     echo "Rendering $app-manifest.yaml for $site site"
     #docker run --rm -i -v $(pwd)/decapod-base-yaml/$app:/$app --name kustomize-build ${DOCKER_IMAGE_REPO}/sktdev/decapod-kustomize:latest kustomize build --enable_alpha_plugins /$app/$site -o /$app/$site/$app-manifest.yaml
-    docker run --rm -i -v $(pwd)/decapod-base-yaml/$app:/$app --name kustomize-build ${DOCKER_IMAGE_REPO}/sktcloud/decapod-render:v2.0.0 kustomize build --enable_alpha_plugins /$app/$site -o /$app/$site/$app-manifest.yaml
+    docker run --rm -i -v $(pwd)/decapod-base-yaml/$app:/$app --name kustomize-build ${DOCKER_IMAGE_REPO}/sktcloud/decapod-render:v2.0.0 kustomize build --enable-alpha-plugins /$app/$site -o /$app/$site/$app-manifest.yaml
     build_result=$?
 
     if [ $build_result != 0 ]; then
